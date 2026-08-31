@@ -1,0 +1,118 @@
+
+h1{
+    text-transform: uppercase;
+    color: rgb(47, 136, 59);
+    letter-spacing: 3px;
+    font-family: 'Montserrat';
+    font-style: oblique;
+    text-align: center;
+}
+.glavni_naslov{
+    text-align: justify;
+    text-shadow: 2px 2px 3px rgb(211, 187, 210);     
+    font-weight: 500;
+    font-size: 26px;
+    margin: 0;
+}
+.podnaslov{
+    text-align: center;
+    font-weight: 500;
+    font-size: 22px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-family: 'Montserrat';
+}
+
+.video-container {
+    width: 80%;
+    height: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+    margin-top: 50px;
+}
+img{
+    border-radius: 10px;
+}
+.kutija-item {
+    width: 300px; 
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.appear {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.5s ease-in-out;
+}
+
+.appear.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.ponuda_box{
+    text-align: center;
+    text-transform: capitalize;
+    font-family: monospace;
+    font-size: 18px;
+    font-style: oblique;
+}
+
+.kutija-item:hover{
+    background-color: rgb(234, 224, 247) !important; 
+}
+p{
+    text-align: center;
+    text-transform: capitalize;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-style: oblique; 
+}
+.text_header{
+    font-size: 14px;
+}
+/* 
+FOOTER
+*/
+ ul, li, .footer_naslov{
+    font-family: 'Montserrat';
+}
+.copyright{
+    font-family: 'Montserrat';
+    font-size: 12px;
+    color: rgb(182, 182, 182);
+    text-transform: capitalize;
+    font-style: normal;
+    text-align: center;
+}
+.footer_naslov{
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: uppercase;    
+}
+.footer_slike{
+    margin-left: 0 20px;
+    margin-right: 0 20px;
+    padding: 0 10px
+}
+.div_segment {
+    border: 2px solid rgb(223, 144, 221); /* ceo border kartice */
+    border-radius: 15px;                  /* zaobljene ivice cele kartice */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* blaga senka za „kartica efekat“ */
+    background-color: #f8f9fa;            /* svetla pozadina */
+}
+.crta{
+    border-left: 2px solid black
+}
