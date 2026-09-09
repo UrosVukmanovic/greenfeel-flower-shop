@@ -6,21 +6,89 @@
     <title>Greenfeel Flowershop</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../css/stil.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Delius&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        .background{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('../slike_cvecara/slike%20ponuda/background_white.jpg') no-repeat center center/cover;
+            opacity: 0.5; 
+            z-index: -1; 
+        }
+        body, html{
+            height: 100%;
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
+    <!-- Background Image Div (with opacity) -->
+    <div class="background"></div>
 
-    <!-- HEADER -->
+    <!------------ HEADER ------------>
     <div class="container-fix">
         <div class="row">
-            <div class="bg-light py-3 row text-center align-items-center">
-                <div class="col-lg-3 col-sm-6"><img src="slike_cvecara/dostava_logo.png" alt="Dostava" width="20"> Dostava 7/22h</div>
-                <div class="col-lg-3 col-sm-6"><img src="slike_cvecara/email_simbol.png" alt="Email" width="20"> contact.greenfeel@gmail.com</div>
-                <div class="col-lg-3 col-sm-6"><img src="slike_cvecara/telefon_simbol.png" alt="Telefon" width="20"> +381603875566</div>
-                <div class="col-lg-3 col-sm-6"><a href="https://www.instagram.com/greenfeel_flowershop/"><img src="slike_cvecara/instagram_simbol.png" alt="Instagram" width="20"></a> greenfeel_flowershop</div>
+          <div class="row bg-dark-subtle py-2">
+            <div class="col-lg-3 col-sm-6 d-flex align-items-center justify-content-center">
+              <img src="../slike_cvecara/greenfeel ikonice/delivery.png" alt="Dostava" width="20" class="me-2">
+              <p class="text_header mb-0">Dostava 7/22h</p>
+            </div>
+            <div class="col-lg-3 col-sm-6 d-flex align-items-center justify-content-center">
+              <img src="../slike_cvecara/greenfeel ikonice/email-svgrepo-com.svg" alt="Email" width="20" class="me-2">
+              <p class="text_header mb-0">contact.greenfeel@gmail.com</p>
+            </div>
+            <div class="col-lg-3 col-sm-6 d-flex align-items-center justify-content-center">
+              <img src="../slike_cvecara/greenfeel ikonice/phone-svgrepo-com.svg" alt="Telefon" width="20" class="me-2">
+              <p class="text_header mb-0">+381603875566</p>
+            </div>
+            <div class="col-lg-3 col-sm-6 d-flex align-items-center justify-content-center">
+              <a href="https://www.instagram.com/greenfeel_flowershop/" class="text-decoration-none text-dark d-flex align-items-center">
+                <img src="../slike_cvecara/greenfeel ikonice/instagram-svgrepo-com.svg" alt="Instagram" width="30" class="me-2">
+                <p class="text_header mb-0">greenfeel_flowershop</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    <!--------- KRAJ HEADERA------------->    
+    <!-----------GLAVNI NASLOV + LOGO + KORPA---------->
+    <div class="container-fluid">
+        <div class="row align-items-center py-4 bg-light text-center">
+            <div class="col col-md-12 d-flex align-items-center justify-content-center">
+                <a href="pocetna_stranica.html" class="nvabar-brand"><img src="../slike_cvecara/logo/logo_transparent.PNG" alt="" width="70"></a>
+                <h1 class="ms-3 glavni_naslov">Cvećara Greenfeel</h1>
             </div>
         </div>
     </div>    
-
+    <!-----------KRAJ GLAVNI NASLOV + KORPA---------->
+    <!--------------- POCETAK MENIJA SAJTA------------------>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
+        <div class="container-fluid">
+            <a href="pocetna_stranica.html" class="navbar-brand">
+                <img src="../slike_cvecara/wetransfer_greenfeel-1-png_2025-03-21_1756/Greenfeel (2).png" alt="" width="75">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbarCollapse" class="collapse navbar-collapse">
+                <ul class=" nav navbar-nav">
+                    <li class="nav-item"><a href="prilike.html" class="nav-link">Prilike</a></li>
+                    <li class="nav-item"><a href="Asortiman.html" class="nav-link">Asortiman</a></li>
+                    <li class="nav-item"><a href="usluge.html" class="nav-link">Usluge</a></li>
+                    <li class="nav-item"><a href="o_nama.html" class="nav-link">O nama</a></li>
+                    <li class="nav-item"><a href="contact_forma.html" class="nav-link">Kontakt</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>    
+    <!--------------- KRAJ MENIJA SAJTA--------------------->
 </body>
 </html>
 

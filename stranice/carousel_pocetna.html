@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greenfeel Carousel</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            color: #2d382a;
+            min-height: 100vh;
+            font-family: 'Montserrat', 'Delius', Arial, sans-serif;
+            background: transparent;
+        }
+
+        .carousel-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            background: transparent;
+        }
+
+        .carousel-showcase {
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        .carousel-card {
+            position: fixed;
+            inset: 0;
+            margin: 0;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            overflow: hidden;
+            box-shadow: none;
+            opacity: 0;
+            transform: scale(1.06);
+            transition: opacity 1.6s ease, transform 2.4s ease;
+            display: block;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .carousel-card.active {
+            opacity: 1;
+            transform: scale(1.02);
+            z-index: 2;
+            pointer-events: auto;
+        }
+
+        .carousel-image-wrap {
+            position: absolute;
+            inset: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background: transparent;
+        }
+
+        .carousel-image-wrap::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent, rgba(70, 80, 35, 0.34));
+            z-index: 1;
+        }
+
+        .carousel-slide {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transform: scale(1.14);
+            transition: opacity 1s ease, transform 1.8s ease;
+        }
+
+        .carousel-slide.active {
+            opacity: 1;
+            transform: scale(1.04);
+        }
+
+        .carousel-shine {
+            position: absolute;
+            left: -30%;
+            top: 0;
+            width: 30%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent);
+            transform: skewX(-22deg);
+            filter: blur(3px);
+            animation: lightSweep 4.5s ease-in-out infinite;
+            z-index: 2;
+        }
+
+        .carousel-overlay {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top left, rgba(255,255,245,0.22), transparent 40%), radial-gradient(circle at bottom right, rgba(141,160,103,0.28), transparent 35%);
+            z-index: 3;
+        }
+
+        .carousel-caption {
+            position: absolute;
+            left: 50%;
+            top: 58%;
+            transform: translate(-50%, -50%);
+            z-index: 5;
+            width: min(560px, calc(100vw - 80px));
+            padding: 0;
+            border-radius: 24px;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            text-align: center;
+            backdrop-filter: blur(0);
+        }
+
+        .carousel-caption .card {
+            width: 100%;
+            max-width: 560px;
+            min-width: min(320px, calc(100vw - 80px));
+            margin: 0 auto;
+            border-radius: 22px;
+            background: rgba(238, 243, 233, 0.24);
+            border: 1px solid rgba(209, 214, 190, 0.58);
+            box-shadow: 0 18px 50px rgba(40, 60, 30, 0.20), inset 0 0 24px rgba(255,255,255,0.14);
+            backdrop-filter: blur(4px);
+        }
+
+        .carousel-caption .card-body {
+            padding: 1.35rem 1.8rem;
+        }
+
+        .figure-label {
+            display: block;
+            font-family: 'Montserrat', 'Delius', Arial, sans-serif;
+            font-size: clamp(24px, 2vw, 36px);
+            font-weight: 800;
+            color: #193f26;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            text-shadow: 1px 1px 2px rgba(255, 250, 242, 0.8);
+        }
+
+        .home-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 22px;
+            background: linear-gradient(135deg, #789f72, #496b4e);
+            color: #fff;
+            border-radius: 999px;
+            font-family: 'Montserrat', serif;
+            font-weight: 800;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            box-shadow: 0 12px 25px rgba(80, 120, 65, 0.22);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        }
+
+        .home-link:hover {
+            color: #fff;
+            text-decoration: none;
+            background: linear-gradient(135deg, #496b4e, #789f72);
+            transform: translateY(-2px);
+            box-shadow: 0 14px 30px rgba(80, 120, 65, 0.34);
+        }
+
+        .new-location {
+            display: block;
+            margin-top: 10px;
+            color: #483421;
+            font-family: 'Delius', serif;
+            font-size: clamp(16px, 1.5vw, 20px);
+            font-style: italic;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+        }
+
+        @keyframes lightSweep {
+            50% {
+                left: 130%;
+                opacity: 0.8;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .carousel-card {
+                border-radius: 0;
+            }
+
+            .carousel-image-wrap {
+                height: 100vh;
+                min-height: 100vh;
+            }
+
+            .carousel-caption {
+                width: min(330px, calc(100vw - 40px));
+                top: 66%;
+            }
+
+            .carousel-caption .card {
+                min-width: unset;
+                width: min(330px, calc(100vw - 40px));
+                border-radius: 14px;
+            }
+
+            .carousel-caption .card-body {
+                padding: 0.8rem 1rem;
+            }
+
+            .figure-label {
+                font-size: 16px;
+                margin-bottom: 6px;
+                letter-spacing: 1px;
+            }
+
+            .new-location {
+                margin-top: 8px;
+                font-size: 12px;
+            }
+
+            .home-link {
+                padding: 7px 12px;
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="carousel-page">
+        <section class="carousel-showcase">
+            <div class="container-fluid h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-12">
+                        <figure class="carousel-card active" data-carousel>
+                            <div class="carousel-image-wrap">
+                                <img class="carousel-slide active" src="../slike_cvecara/Carousel/cvecara dorcol napolje carousel.jpeg" alt="Cvećara GreenFeel Dorcol">
+                                <span class="carousel-shine"></span>
+                                <span class="carousel-overlay"></span>
+
+                                <figcaption class="carousel-caption">
+                                    <div class="card text-center border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <span class="figure-label">Cvecara GreenFeel Dorcol</span>
+                                            <span class="new-location">Od sada i na novoj lokaciji</span>
+                                            <a class="home-link mt-3" href="pocetna_stranica.html">pocetna stranica</a>
+                                        </div>
+                                    </div>
+                                </figcaption>
+                            </div>
+                        </figure>
+
+                        <figure class="carousel-card" data-carousel>
+                            <div class="carousel-image-wrap">
+                                <img class="carousel-slide active" src="../slike_cvecara/Carousel/cvecara altina napolje carousel.webp" alt="Cvećara GreenFeel Altina">
+                                <span class="carousel-shine"></span>
+                                <span class="carousel-overlay"></span>
+
+                                <figcaption class="carousel-caption">
+                                    <div class="card text-center border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <span class="figure-label">Cvecara Greenfeel Altina</span>
+                                            <a class="home-link mt-3" href="pocetna_stranica.html">pocetna stranica</a>
+                                        </div>
+                                    </div>
+                                </figcaption>
+                            </div>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const slides = Array.from(document.querySelectorAll("[data-carousel]"));
+            if (slides.length < 2) {
+                return;
+            }
+
+            let slideIndex = 0;
+            setInterval(function() {
+                const current = slides[slideIndex];
+                if (current) {
+                    current.classList.remove("active");
+                    current.style.opacity = "0";
+                    current.style.zIndex = "1";
+                }
+
+                slideIndex = (slideIndex + 1) % slides.length;
+                const next = slides[slideIndex];
+                if (next) {
+                    next.style.opacity = "1";
+                    next.style.zIndex = "2";
+                    next.classList.add("active");
+                }
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
