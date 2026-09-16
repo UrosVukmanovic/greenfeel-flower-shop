@@ -91,6 +91,245 @@ p{
 .text_header{
     font-size: 14px;
 }
+
+.home-section-card {
+    background-color: #fffdf9;
+    border-radius: 1.5rem;
+    box-shadow: 0 1.5rem 3rem rgba(62, 74, 48, 0.13) !important;
+}
+
+.wedding-feature-card {
+    background: #f4eee3;
+}
+
+.wedding-feature-media {
+    min-height: 420px;
+    position: relative;
+    overflow: hidden;
+}
+
+.wedding-feature-media::after {
+    position: absolute;
+    inset: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 1rem;
+    content: '';
+    pointer-events: none;
+}
+
+.wedding-feature-media .home-section-image {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    border-radius: 0;
+    object-fit: cover;
+}
+
+.wedding-feature-stamp {
+    position: absolute;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    z-index: 1;
+    padding: 0.55rem 0.9rem;
+    border-radius: 999px;
+    background: #fffdf9;
+    color: #1f6f3a;
+    font-family: 'Delius', cursive;
+    font-size: 0.9rem;
+    transform: rotate(-4deg);
+}
+
+.home-card-kicker,
+.special-offer-label {
+    display: block;
+    color: #b36b58;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.72rem;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.13rem;
+    text-transform: uppercase;
+}
+
+.home-card-title {
+    color: #274c38;
+    font-family: 'Delius', cursive;
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    font-weight: 400;
+    line-height: 1.1;
+    text-transform: none;
+}
+
+.home-card-rule {
+    width: 4.5rem;
+    height: 0.2rem;
+    background: #d7a27e;
+}
+
+.home-card-copy {
+    color: #4f5c50;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    line-height: 1.8;
+    text-align: left;
+    text-transform: none;
+}
+
+.special-offer-card {
+    background: #fffaf5;
+}
+
+.special-offer-number {
+    color: #9b8c7b;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.12rem;
+}
+
+.special-offer-item {
+    padding: 1rem;
+    border: 1px solid rgba(179, 107, 88, 0.18);
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.7);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.special-offer-item:hover {
+    box-shadow: 0 1rem 2rem rgba(62, 74, 48, 0.12);
+    transform: translateY(-0.35rem);
+}
+
+.special-offer-image-wrap {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.75rem;
+}
+
+.special-offer-image-wrap .home-section-image {
+    display: block;
+    width: 100%;
+    height: 250px;
+    max-height: none;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.special-offer-item:hover .home-section-image {
+    transform: scale(1.04);
+}
+
+.special-offer-tag {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.45rem 0.7rem;
+    border-radius: 0.35rem;
+    background: #274c38;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.special-offer-label {
+    margin-bottom: 0.65rem;
+    color: #274c38;
+    letter-spacing: 0.08rem;
+}
+
+.home-video-card .video-container {
+    width: 100%;
+    height: clamp(240px, 45vw, 560px);
+    border-radius: 0;
+}
+
+.home-video-card .video-container video {
+    margin-top: 0;
+    border-radius: 0;
+}
+
+.home-section-image {
+    max-height: 360px;
+    object-fit: cover;
+}
+
+.navbar-greenfeel {
+    background-color: #1f6f3a !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 0.45rem 0;
+}
+
+.navbar-greenfeel .navbar-brand {
+    color: #fff;
+    font-family: 'Delius', cursive;
+    font-size: 1.2rem;
+    letter-spacing: 0;
+}
+
+.navbar-greenfeel .navbar-brand img {
+    background-color: #fff;
+    border-radius: 50%;
+    object-fit: contain;
+    padding: 3px;
+}
+
+.navbar-greenfeel .nav-link {
+    border-radius: 999px;
+    color: rgba(255, 255, 255, 0.86);
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.95rem;
+    font-style: normal;
+    padding: 0.55rem 0.9rem;
+    text-transform: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.navbar-greenfeel .nav-link:hover,
+.navbar-greenfeel .nav-link:focus-visible {
+    background-color: rgba(255, 255, 255, 0.14);
+    color: #fff;
+}
+
+.navbar-greenfeel .nav-link-contact {
+    background-color: #fff;
+    color: #1f6f3a;
+    font-weight: 600;
+}
+
+.navbar-greenfeel .nav-link-contact:hover,
+.navbar-greenfeel .nav-link-contact:focus-visible {
+    background-color: #e9f5ec;
+    color: #15552c;
+}
+
+.navbar-greenfeel .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.45);
+    padding: 0.45rem 0.6rem;
+}
+
+.navbar-greenfeel .navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+}
+
+@media (max-width: 991.98px) {
+    .wedding-feature-media {
+        min-height: 320px;
+    }
+
+    .navbar-greenfeel .navbar-collapse {
+        padding-top: 0.75rem;
+    }
+
+    .navbar-greenfeel .nav-link {
+        border-radius: 0.5rem;
+    }
+
+    .navbar-greenfeel .nav-link-contact {
+        margin-top: 0.25rem;
+        text-align: center;
+    }
+}
 /* 
 FOOTER
 */
