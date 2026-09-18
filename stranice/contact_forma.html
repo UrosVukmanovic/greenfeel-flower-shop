@@ -90,21 +90,61 @@
         </div>
     </nav>    
     <!--------------- KRAJ MENIJA SAJTA--------------------->
-    <h1 class="m-5">Kontaktirajte nas</h1>
-    <section class="m-4 p-5">
-        <div class="container-fluid">
-            <div class="row div_segment align-items-center p-2">            
-                <div class="col-md-6 text-end">
-                    <p>
+    <h1 class="mt-4 mb-3 text-center">Kontaktirajte nas</h1>
+    <section class="contact-intro-section py-2 px-3 px-md-4">
+        <div class="container">
+            <div class="row contact-intro-card align-items-center g-3 p-3 p-md-4">            
+                <div class="col-md-8">
+                    <p class="contact-intro-text mb-0">
                         Ukoliko vam je potrebna podrška u planiranju i dekoraciji vašeg događaja, ili jednostavno želite da obradujete dragu osobu posebnim detaljem, biće nam zadovoljstvo da vam pomognemo. Slobodno nas kontaktirajte putem podataka u nastavku ili posetite našu lokaciju - rado ćemo zajedno osmisliti trenutke koji se pamte.
                     </p>
                 </div>
-                <div class="col-md-6 text-center">
-                    <img src="slike_cvecara/slika_kontakt.png" alt="" class="img-fluid rounded-circle border p-2" style="max-width: 200px">
+                <div class="col-md-4 text-center">
+                    <img src="../slike_cvecara/greenfeel slike cvece/DSC00661.jpg" alt="Cvetni detalj i buket u prirodnim tonovima" class="img-fluid rounded-circle border border-2 border-white shadow-sm" style="max-width: 170px; height: 170px; object-fit: cover;">
                 </div>            
             </div>
         </div>
-    </section>  
+    </section>
+
+    <section class="contact-form-section py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-form-header text-center mb-4">
+                        <span class="home-card-kicker">Pošaljite upit</span>
+                        <h2>Tražite cvetni poklon ili dekoraciju?</h2>
+                    </div>
+
+                    <form id="greenfeelContactForm" class="contact-form-simple" novalidate>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="ime" class="form-label">Ime i prezime</label>
+                                <input id="ime" name="ime" type="text" class="form-control" placeholder="Vaše ime" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email</label>
+                                <input id="email" name="email" type="email" class="form-control" placeholder="vas@email.com" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="tema" class="form-label">Tema</label>
+                                <input id="tema" name="tema" type="text" class="form-control" placeholder="Na primer: Buket za rođendan" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="poruka" class="form-label">Poruka</label>
+                                <textarea id="poruka" name="poruka" class="form-control" rows="5" maxlength="500" placeholder="Opišite željeni buket, datum, lokaciju ili vrstu događaja..." required></textarea>
+                                <div class="form-text text-end" id="porukaCounter">0 / 500</div>
+                            </div>
+                            <div class="col-12 d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mt-2">
+                                <button type="submit" class="btn contact-submit-btn">Pošalji zahtev</button>
+                                <span id="formFeedback" class="form-feedback" aria-live="polite"></span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!--Leva strana sajta-->
     <section class="py-3 m-3">
     <div class="container-fluid">
