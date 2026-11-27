@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sr-Latn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Greenfeel Flowershop</title>
+    <title>Prilike | Cvećara Greenfeel</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="../css/stil.css">
@@ -24,6 +24,31 @@
         body, html{
             height: 100%;
             margin: 0;
+        }
+        .occasion-feature-image{
+            display: block;
+            width: 100%;
+            height: 100%;
+            min-height: 28rem;
+            object-fit: cover;
+            border-radius: 0;
+        }
+        .occasion-card-image{
+            display: block;
+            width: 100%;
+            height: clamp(14rem, 28vw, 22rem);
+            object-fit: cover;
+            border-radius: 0;
+        }
+        .occasion-card{
+            border: 0;
+            background: #fffdf9;
+        }
+        @media (max-width: 767.98px){
+            .occasion-feature-image{
+                height: 18rem;
+                min-height: 0;
+            }
         }
     </style>
 </head>
@@ -63,7 +88,7 @@
         <div class="row align-items-center py-4 bg-light text-center">
             <div class="col col-md-12 d-flex align-items-center justify-content-center">
                 <a href="pocetna_stranica.html" class="nvabar-brand"><img src="../slike_cvecara/logo/logo_transparent.PNG" alt="" width="70"></a>
-                <h1 class="ms-3 glavni_naslov">Cvećara Greenfeel</h1>
+                <p class="ms-3 glavni_naslov">Cvećara Greenfeel</p>
             </div>
         </div>
     </div>    
@@ -90,6 +115,61 @@
         </div>
     </nav>    
     <!--------------- KRAJ MENIJA SAJTA--------------------->
+    <main class="container py-5">
+        <header class="mx-auto mb-5 text-center" style="max-width: 760px;">
+            <span class="home-card-kicker">Cvetna dekoracija za posebne trenutke</span>
+            <h1 class="home-card-title mt-3 mb-3">Prilike koje pamtimo</h1>
+            <p class="home-card-copy text-center">Venčanja su naš glavni fokus, a cvetnom dekoracijom ulepšavamo i krštenja i rođendane.</p>
+        </header>
+
+        <section class="mb-5" aria-labelledby="weddings-heading">
+            <article class="home-section-card wedding-feature-card overflow-hidden">
+                <div class="row g-0 align-items-stretch">
+                    <div class="col-lg-5">
+                        <img src="../slike_cvecara/Prilike/prilike%20kartice/prilike%20vencanje%20kartica.jpeg" class="occasion-feature-image" alt="Svadbeni prostor sa svečanim lukom, stazom i raspoređenim stolicama">
+                    </div>
+                    <div class="col-lg-7 d-flex align-items-center">
+                        <div class="p-4 p-lg-5">
+                            <span class="home-card-kicker">Naš glavni fokus</span>
+                            <h2 id="weddings-heading" class="home-card-title mt-3 mb-4">Dekoracija venčanja</h2>
+                            <div class="home-card-rule mb-4"></div>
+                            <p class="home-card-copy mb-4">Od bidermajera i dekoracije stolova do svečanih lukova, staza i aranžmana za crkve i sale. Cvetne detalje usklađujemo sa vašim željama, temom i bojama venčanja.</p>
+                            <a href="contact_forma.html" class="btn contact-submit-btn">Dogovorite dekoraciju venčanja</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section aria-labelledby="other-occasions-heading">
+            <div class="mx-auto mb-4 text-center" style="max-width: 680px;">
+                <h2 id="other-occasions-heading" class="home-card-title">Krštenja i rođendani</h2>
+                <p class="home-card-copy text-center">Cvetni detalji prilagođeni karakteru i atmosferi vašeg slavlja.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <article class="home-section-card occasion-card h-100 overflow-hidden">
+                        <img src="../slike_cvecara/Prilike/prilike%20kartice/prilike%20krstenja%20kartica.JPG" class="occasion-card-image" alt="Cvetni luk i aranžmani za proslavu krštenja" loading="lazy">
+                        <div class="p-4">
+                            <h3 class="home-card-title fs-2 mb-3">Krštenja</h3>
+                            <p class="home-card-copy mb-4">Nežni cvetni aranžmani i dekoracija prostora za porodično slavlje krštenja.</p>
+                            <a href="contact_forma.html" class="btn contact-submit-btn">Dogovorite dekoraciju</a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-6">
+                    <article class="home-section-card occasion-card h-100 overflow-hidden">
+                        <img src="../slike_cvecara/Prilike/prilike%20kartice/prilike%20rodjendani%20kartica.png" class="occasion-card-image" alt="Šarenolika cvetna dekoracija ispred svečano postavljenog stola" loading="lazy">
+                        <div class="p-4">
+                            <h3 class="home-card-title fs-2 mb-3">Rođendani</h3>
+                            <p class="home-card-copy mb-4">Cvetni detalji za sto i prostor, osmišljeni tako da dopune rođendansko slavlje.</p>
+                            <a href="contact_forma.html" class="btn contact-submit-btn">Dogovorite dekoraciju</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
     <footer class="footer text-center bg-dark-subtle text-dark py-4 mt-5">
         <div class="container">
             <div class="row footer-directory">
@@ -138,3 +218,5 @@
             </div>
         </div>
     </footer>
+</body>
+</html>
