@@ -45,6 +45,15 @@
         .services-carousel-slide{
             position: relative;
         }
+        .services-carousel-link{
+            display: block;
+            color: inherit;
+            text-decoration: none;
+        }
+        .services-carousel-link:focus-visible{
+            outline: 3px solid #1f6f3a;
+            outline-offset: -3px;
+        }
         .services-carousel-caption{
             position: absolute;
             right: 0;
@@ -211,7 +220,8 @@
                 </div>
             </div>
             <section class="mt-5" aria-labelledby="services-gallery-heading">
-                <div id="servicesCarousel" class="carousel slide home-section-card services-carousel overflow-hidden" data-bs-ride="false">
+                <h2 id="services-gallery-heading" class="visually-hidden">Galerija usluga</h2>
+                <div id="servicesCarousel" class="carousel slide home-section-card services-carousel overflow-hidden" data-bs-ride="carousel" data-bs-interval="3000">
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Uređenje poslovnih dvorišta"></button>
                         <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="1" aria-label="Ozelenjavanje enterijera"></button>
@@ -219,28 +229,34 @@
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <figure class="services-carousel-slide m-0">
-                                <img src="../slike_cvecara/usluge/usluge%20slike%20slajderi/Landscaping%20slajder.jpeg" class="services-carousel-image" alt="Uređenje spoljašnjeg prostora uz stazu">
-                                <figcaption class="services-carousel-caption">
-                                    <h3>Uređenje poslovnih dvorišta</h3>
-                                </figcaption>
-                            </figure>
+                            <a href="uredjenje_poslovnih_dvorista.html" class="services-carousel-link" aria-label="Saznajte više o uređenju poslovnih dvorišta">
+                                <figure class="services-carousel-slide m-0">
+                                    <img src="../slike_cvecara/usluge/usluge%20slike%20slajderi/Landscaping%20slajder.jpeg" class="services-carousel-image" alt="Uređen spoljašnji prostor uz stazu">
+                                    <figcaption class="services-carousel-caption">
+                                        <h3>Uređenje poslovnih dvorišta</h3>
+                                    </figcaption>
+                                </figure>
+                            </a>
                         </div>
                         <div class="carousel-item">
-                            <figure class="services-carousel-slide m-0">
-                                <img src="../slike_cvecara/usluge/usluge%20slike%20slajderi/Poslovni%20prostor%20slajder.jpeg" class="services-carousel-image" alt="Zelenilo i biljke u enterijeru">
-                                <figcaption class="services-carousel-caption">
-                                    <h3>Ozelenjavanje enterijera</h3>
-                                </figcaption>
-                            </figure>
+                            <a href="uredjenje_poslovnih_dvorista.html" class="services-carousel-link" aria-label="Saznajte više o ozelenjavanju enterijera">
+                                <figure class="services-carousel-slide m-0">
+                                    <img src="../slike_cvecara/usluge/usluge%20slike%20slajderi/Poslovni%20prostor%20slajder.jpeg" class="services-carousel-image" alt="Biljke i zelenilo u enterijeru">
+                                    <figcaption class="services-carousel-caption">
+                                        <h3>Ozelenjavanje enterijera</h3>
+                                    </figcaption>
+                                </figure>
+                            </a>
                         </div>
                         <div class="carousel-item">
-                            <figure class="services-carousel-slide m-0">
-                                <img src="../slike_cvecara/usluge/usluge%20slike%20slajderi/dekoracija%20slajder.png" class="services-carousel-image" alt="Cvetna dekoracija svečanog stola">
-                                <figcaption class="services-carousel-caption">
-                                    <h3>Dekoracija događaja</h3>
-                                </figcaption>
-                            </figure>
+                            <a href="prilike.html" class="services-carousel-link" aria-label="Pogledajte dekoraciju događaja u galeriji prilika">
+                                <figure class="services-carousel-slide m-0">
+                                    <img src="../slike_cvecara/usluge/usluge%20slike%20slajderi/dekoracija%20slajder.png" class="services-carousel-image" alt="Cvetna dekoracija svečanog stola">
+                                    <figcaption class="services-carousel-caption">
+                                        <h3>Dekoracija događaja</h3>
+                                    </figcaption>
+                                </figure>
+                            </a>
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarousel" data-bs-slide="prev" aria-label="Prethodna usluga">
@@ -258,8 +274,8 @@
     </main>
     <footer class="footer text-center bg-dark-subtle text-dark py-4 mt-5">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-sm-6">
+            <div class="row footer-directory">
+                <div class="col-4">
                     <h2 class="footer_naslov">Asortiman</h2>
                     <ul class="list-unstyled">
                         <li>Buketi</li>
@@ -268,7 +284,7 @@
                         <li>Rezano cvece</li>
                     </ul>
                 </div>
-                <div class="col-lg-4 col-sm-6">
+                <div class="col-4">
                     <h2 class="footer_naslov">Prilike</h2>
                     <ul class="list-unstyled">
                         <li>Svadbe</li>
@@ -276,7 +292,7 @@
                         <li>Proslave</li>
                     </ul>
                 </div>
-                <div class="col-lg-4 col-sm-6">
+                <div class="col-4">
                     <h2 class="footer_naslov">Cvecara</h2>
                     <ul class="list-unstyled">
                         <li>O nama</li>

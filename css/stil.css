@@ -508,6 +508,19 @@ FOOTER
     font-style: normal;
     text-transform: uppercase;    
 }
+.footer-directory .footer_naslov{
+    font-size: clamp(0.65rem, 2.5vw, 1rem);
+    line-height: 1.3;
+}
+.footer-directory ul{
+    padding: 0;
+    margin-bottom: 0;
+}
+.footer-directory li{
+    margin-bottom: 0.4rem;
+    font-size: clamp(0.65rem, 2.3vw, 0.9rem);
+    line-height: 1.35;
+}
 .footer_slike{
     margin-left: 0 20px;
     margin-right: 0 20px;
